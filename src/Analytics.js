@@ -18,8 +18,8 @@ export default function Analytics() {
   const [responses, setResponses] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/forms/${id}`).then(res => setForm(res.data));
-    axios.get(`http://localhost:5000/api/forms/${id}/responses`).then(res => setResponses(res.data));
+    axios.get(`https://your-render-backend-url.onrender.com/api/forms/${id}`).then(res => setForm(res.data));
+    axios.get(`https://your-render-backend-url.onrender.com/api/forms/${id}/responses`).then(res => setResponses(res.data));
   }, [id]);
 
   if (!form) return <Typography>Loading form data...</Typography>;

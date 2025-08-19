@@ -11,7 +11,7 @@ export default function FillForm() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/forms/${id}`)
+    axios.get(`https://your-render-backend-url.onrender.com/api/forms/${id}`)
       .then(res => {
         setForm(res.data);
         setAnswers(Array(res.data.questions.length).fill(""));
@@ -25,7 +25,7 @@ export default function FillForm() {
   }
 
   function submitAnswers() {
-    axios.post(`http://localhost:5000/api/forms/${id}/responses`, { answers })
+    axios.post(`https://your-render-backend-url.onrender.com/api/forms/${id}/responses`, { answers })
       .then(() => setSubmitted(true));
   }
 

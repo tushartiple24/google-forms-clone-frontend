@@ -27,7 +27,7 @@ export default function FormBuilder() {
     if (!data.title || data.questions.length === 0) {
       alert("Title & at least one question required"); return;
     }
-    axios.post("http://localhost:5000/api/forms", data)
+    axios.post("https://your-render-backend-url.onrender.com/api/forms", data)
       .then(() => { alert("Form saved!"); navigate("/"); });
   }
 
